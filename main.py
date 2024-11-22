@@ -7,6 +7,13 @@ from aiohttp import ClientSession
 
 
 async def parse_site(parser: BaseParser, session: ClientSession):
+    """
+    Асинхронно загружает HTML-страницу с использованием переданного парсера,
+    парсит данные и сохраняет их.
+
+    :param parser: Парсер для конкретного сайта (наследник BaseParser).
+    :param session: Объект ClientSession для выполнения HTTP-запросов.
+    """
     try:
         await parser.get_html(session)  # Асинхронно загружаем HTML
         data = parser.parse_data()  # Парсим данные
@@ -16,6 +23,10 @@ async def parse_site(parser: BaseParser, session: ClientSession):
 
 
 async def main():
+    """
+    Главная асинхронная функция, которая инициализирует парсеры и выполняет
+    асинхронное парсинг всех указанных сайтов.
+    """
     # Указываем URL для парсинга
     url1 = "https://site1.com/products"
     url2 = "https://site2.com/products"
@@ -31,4 +42,7 @@ async def main():
 
 
 if __name__ == "__main__":
+    """
+    Запуск асинхронной функции main() при запуске скрипта.
+    """
     asyncio.run(main())  # Запуск асинхронной главной функции
