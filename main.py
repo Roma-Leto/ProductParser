@@ -28,11 +28,10 @@ async def main():
     асинхронное парсинг всех указанных сайтов.
     """
     # Указываем URL для парсинга
-    url1 = "https://site1.com/products"
-    url2 = "https://site2.com/products"
+    url1 = "https://magnit.ru/catalog"
 
-    # Создаем парсеры для сайтов
-    parsers = [Site1Parser(url1), Site2Parser(url2)]
+    # Создаем парсер для сайта
+    parsers = [Site1Parser(url1)]
 
     # Используем aiohttp для асинхронных HTTP-запросов
     async with ClientSession() as session:
