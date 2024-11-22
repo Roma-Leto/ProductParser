@@ -1,3 +1,5 @@
+import re
+
 from bs4 import BeautifulSoup
 from parsers.base_parser import BaseParser
 from parsers.utils.logger import logger

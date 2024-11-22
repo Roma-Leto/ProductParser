@@ -1,8 +1,6 @@
 import asyncio
-
 from parsers.base_parser import BaseParser
 from parsers.site1_parser import Site1Parser
-from parsers.site2_parser import Site2Parser
 from aiohttp import ClientSession
 
 
