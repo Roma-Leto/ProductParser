@@ -14,3 +14,4 @@ propcache==0.2.0
 pytest==8.3.3
 soupsieve==2.6
 yarl==1.17.1
+datetime

@@ -7,6 +7,7 @@ class BaseParser(ABC):
     def __init__(self, url: str):
         self.url = url
         self.html = None
+        self.db_name = None
 
     @abstractmethod
     async def get_html(self, session: ClientSession):
