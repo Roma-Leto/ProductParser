@@ -30,11 +30,12 @@ class Site1Parser(BaseParser):
                 'span',
                 {'data-v-de2089e9': ''}).get_text()
             # Извлекаем только цифры
-            clean_price = re.findall(r'\d+\.\d+',price)[0]
+            clean_price = re.findall(r'\d+\.\d+', price)[0]
             products.append({'title': title, 'price': clean_price})
 
         logger.info(
-            f"Парсинг завершен для {self.url}, найдено {len(products)} товаров")
+            f"Парсинг завершен для {self.url}, "
+            f"найдено {len(products)} товаров")
         return products
 
     def save_data(self, data):
